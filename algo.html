@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- header -->
+    <div class="header">
+        <div class="row">
+            <div class="collapasable-menu col-3 align-self-center" onclick="openNav()">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </div>
+            <div id="logo" class="container-fluid logo col-6 align-self-center">
+                <img src="Images/logo.png" alt="cpu Scheduling">
+            </div>
+            <div class="col-3 align-self-center"></div>
+        </div>
+    </div>
+    <!-- Table -->
+    <div class="table container-fluid" style="display: grid;">
+        <div class="content">
+            <div class="table-content">
+                <table>
+                    <tr>
+                        <th> PROCESS</th>
+                        <th> ARRIVAL TIME</th>
+                        <th> BURST TIME</th>
+                        <th>WAITING TIME</th>
+                        <th>TURNAROUND TIME</th>
+                        <th>COMPLETION TIME</th>
+                    </tr>
+                    <tr>
+                        <td>P1</td>
+                        <td><input type="number"></td>
+                        <td><input type="number"></td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>P2</td>
+                        <td><input type="number"></td>
+                        <td><input type="number"></td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>P3</td>
+                        <td><input type="number"></td>
+                        <td><input type="number"></td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>P4</td>
+                        <td><input type="number"></td>
+                        <td><input type="number"></td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                </table>
+                <div class="buttons">
+                    <a href="" class="row-button"><i class="fas fa-redo"></i></a><br>
+                    <a class="row-button" href=""><i class="fas fa-plus"></i></a><br>
+                    <a href="" class="row-button"><i class="fas fa-minus"></i></a>
+                </div>
+            </div>
+            <div class="input-quantum">
+                <label for="quantum">Quantum : </label>
+                <input type="number" min="1" max="99" id="quantum">
+            </div>
+            <a href="" class="submit"><i class="fas fa-play"></i>START SIMULATION</a>
+        </div>
+    </div>
+    <!-- Content -->
+    <div id="container-fluid" style="margin-bottom: 100px;">
+        <div class="row justify-content-center">
+            <!-- first -->
+            <div class="algos" style="width: 10%;">
+                <div class="line title" style="background-color: blue;">name</div>
+                <div class="line justify-content-between" style="text-align: left;background-color: white;border-right: 0px;">
+                    <div style="position: absolute; left: 0px;">0</div>
+                    <!-- <div style="position: absolute; right: 0px">54</div> -->
+                </div>
+            </div>
+            <!-- middle -->
+            <div class="algos" style="width: 10%;">
+                <div class="line title" style="background-color: blue;">name</div>
+                <div class="line justify-content-between" style="text-align: left;background-color: white;border-right: 0px;">
+                    <div style="position: absolute; left: -5px;">0</div>
+                    <!-- <div style="position: absolute; right: 0px">54</div> -->
+                </div>
+            </div>
+            <!-- last -->
+            <div class="algos" style="width: 10%;">
+                <div class="line title" style="background-color: blue;">name</div>
+                <div class="line justify-content-between" style="text-align: left;background-color: white;border-right: 0px;">
+                    <div style="position: absolute; left: -5px;">0</div>
+                    <div style="position: absolute; right: -2px">54</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer  -->
+    <div class="footer algo-footer">
+        Made with <i class="fas fa-heart"></i> by Rajat and Rahul Kakkar
+     </div>
+    <script src="js/bootstrap.js"></script>
+    <!-- <script src="js/FCFS.js"></script> -->
+    <script src="js/process.js"></script>
+    <script src="js/block.js"></script>
+    <script src="js/queue.js"></script>
+    <script src="js/sjf-nonpreemptive.js"></script>
+    <script src="js/FCFS.js"></script>
+    <script src="js/round-robin.js"></script>
+    <script src="js/draw.js"></script>
+</body>
+</html>
