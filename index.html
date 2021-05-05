@@ -42,11 +42,21 @@
                     <p>CONS</p>
                 </a>
             </li>
+            <li class="links">
+                <a href="about.html" class="navigation-links">
+                    <p>ABOUT US</p>
+                </a>
+            </li>
+            <li class="links">
+                <a href="#CONS" class="navigation-links">
+                    <p>CONTACT US</p>
+                </a>
+            </li>
         </ul>
     </div>
     <div class="header">
         <div class="row">
-            <div class="collapasable-menu col-3 align-self-center" onclick="openNav()">
+            <div class="visible collapasable-menu col-3 align-self-center" onclick="openNav()">
                 <div class="menu-line"></div>
                 <div class="menu-line"></div>
                 <div class="menu-line"></div>
@@ -54,47 +64,51 @@
             <div id="logo" class="container-fluid logo col-6 align-self-center">
                 <img src="Images/logo.png" alt="cpu Scheduling">
             </div>
-            <div class="col-3 align-self-center"></div>
+            <div class="disappear col-3"></div>
+            <div class="col-3 disappear smal-nav align-self-center">
+                <a class="small-nav-links" href="about.html">About Us</a>
+                <a class="small-nav-links" href="index.html">Contact Us</a>
+            </div>
         </div>
-        <div id="navigation" class="container-fluid navgation-bar">
-            <ul class = "list nav justify-content-center ">
-                <li class="nav-item links">
-                    <!-- href="#CPUSCHEDULING"
-                         href="#NEED"
-                         href="#ALGORITHMS"
-                         href="#PROS"
-                         href="#CONS"
-                    -->
-                    <a id="1"  href="#CPUSCHEDULING" class="navigation-links navigation-links" onclick="addPadding()" onscroll="removePad()">
-                        <p>WHAT IS CPU SCHEDULING</p>
-                    </a>
-                    <div class="bar"></div>
-                </li>
-                <li class="links">
-                    <a id="2" href="#NEED" class="navigation-links" onclick="addPadding()" onscroll="removePad()">
-                        <p>NEED FOR CPU SCHEDULING</p>
-                    </a>
-                    <div class="bar"></div>
-                </li>
-                <li class="links">
-                    <a id="3" href="#ALGORITHMS" class="navigation-links" onclick="addPadding()" onscroll="removePad()">
-                        <p>ALGORITHMS</p>
-                    </a>
-                    <div class="bar"></div>
-                </li>
-                <li class="links">
-                    <a id="4" href="#PROS" class="navigation-links" onclick="addPadding()" onscroll="removePad()">
-                        <p>PROS</p>
-                    </a>
-                    <div class="bar"></div>
-                </li>
-                <li class="links">
-                    <a id="5" href="#CONS" class="navigation-links" onclick="addPadding()" onscroll="removePad()">
-                        <p>CONS</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
+    </div>
+    <div id="navigation" class="container-fluid navgation-bar">
+        <ul class = "list nav justify-content-center ">
+            <li class="nav-item links">
+                <!-- href="#CPUSCHEDULING"
+                     href="#NEED"
+                     href="#ALGORITHMS"
+                     href="#PROS"
+                     href="#CONS"
+                -->
+                <a id="1"  href="#CPUSCHEDULING" class="navigation-links navigation-links" onclick="addPadding()" onscroll="removePad()">
+                    <p>WHAT IS CPU SCHEDULING</p>
+                </a>
+                <div class="bar"></div>
+            </li>
+            <li class="links">
+                <a id="2" href="#NEED" class="navigation-links" onclick="addPadding()" onscroll="removePad()">
+                    <p>NEED FOR CPU SCHEDULING</p>
+                </a>
+                <div class="bar"></div>
+            </li>
+            <li class="links">
+                <a id="3" href="#ALGORITHMS" class="navigation-links" onclick="addPadding()" onscroll="removePad()">
+                    <p>ALGORITHMS</p>
+                </a>
+                <div class="bar"></div>
+            </li>
+            <li class="links">
+                <a id="4" href="#PROS" class="navigation-links" onclick="addPadding()" onscroll="removePad()">
+                    <p>PROS</p>
+                </a>
+                <div class="bar"></div>
+            </li>
+            <li class="links">
+                <a id="5" href="#CONS" class="navigation-links" onclick="addPadding()" onscroll="removePad()">
+                    <p>CONS</p>
+                </a>
+            </li>
+        </ul>
     </div>
     <!-- Content -->
     <div class="content" id="content">
