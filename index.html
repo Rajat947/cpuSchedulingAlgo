@@ -74,12 +74,6 @@
     <div id="navigation" class="container-fluid navgation-bar">
         <ul class = "list nav justify-content-center ">
             <li class="nav-item links">
-                <!-- href="#CPUSCHEDULING"
-                     href="#NEED"
-                     href="#ALGORITHMS"
-                     href="#PROS"
-                     href="#CONS"
-                -->
                 <a id="1"  href="#CPUSCHEDULING" class="navigation-links navigation-links" onclick="addPadding()" onscroll="removePad()">
                     <p>WHAT IS CPU SCHEDULING</p>
                 </a>
@@ -182,18 +176,48 @@
             </div>
             <div class="row"> 
                 <div class="algo-detail container-fluid">
-                    <div class="row algoName justify-content-between">
-                        <div class="col-10 algoName-title">FIRST COME FIRST SERVE</div>
-                        <!-- <div class="col-1 Plus-sign">
-                            <div class="plus-bar vertical-bar"></div>
-                            <div class="plus-bar horizontal-bar"></div>
-                        </div> -->
+                    <div class="row algoName">
+                        <div id="FCFS"  class="row algoName-title" onclick="showAlgo()">FIRST COME FIRST SERVE</div>
                     </div>
-                    <div class = "row algoContent">
+                    <div class = "FCFS row algoContent">
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore
                         rem exercitationem placeat fuga aliquam, deleniti minima, doloribus vero
                         amet accusantium praesentium magni magnam illo
                         libero, non voluptas fugiat corporis explicabo?
+                        <div class="simulation-btn">
+                            <!-- href="algo.html"  -->
+                            <a class="FCFS simulate" onclick="navigate()">&#8811 Simulate</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="algo-detail container-fluid">
+                    <div class="row algoName">
+                        <div id="SJF"  class="row algoName-title" onclick="showAlgo()">SHORTEST JOB FIRST</div>
+                    </div>
+                    <div class = "SJF row algoContent">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore
+                        rem exercitationem placeat fuga aliquam, deleniti minima, doloribus vero
+                        amet accusantium praesentium magni magnam illo
+                        libero, non voluptas fugiat corporis explicabo?
+                        <div class="simulation-btn">
+                            <!-- href="algo.html"  -->
+                            <a class="SJF simulate" onclick="navigate()">&#8811 Simulate</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="algo-detail container-fluid">
+                    <div class="row algoName">
+                        <div id="RR"  class="row algoName-title" onclick="showAlgo()">ROUND ROBIN</div>
+                    </div>
+                    <div class = "RR row algoContent">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore
+                        rem exercitationem placeat fuga aliquam, deleniti minima, doloribus vero
+                        amet accusantium praesentium magni magnam illo
+                        libero, non voluptas fugiat corporis explicabo?
+                        <div class="simulation-btn">
+                            <!-- href="algo.html"  -->
+                            <a class="RR simulate" onclick="navigate()">&#8811 Simulate</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -258,6 +282,7 @@
         Made with <i class="fas fa-heart"></i> by Rajat and Rahul Kakkar
      </div>
     <script src="js/bootstrap.js"></script>
+    <script src="js/draw.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

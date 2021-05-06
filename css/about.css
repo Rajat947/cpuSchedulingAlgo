@@ -46,3 +46,7 @@
     color: #D9D9D9;
     font-size: 3vw;
 }
+td input
+{
+    text-align: center;
+}

@@ -28,7 +28,7 @@
     <div class="table container-fluid" style="display: grid;">
         <div class="content">
             <div class="table-content">
-                <table>
+                <table id="table">
                     <tr>
                         <th> PROCESS</th>
                         <th> ARRIVAL TIME</th>
@@ -37,79 +37,63 @@
                         <th>TURNAROUND TIME</th>
                         <th>COMPLETION TIME</th>
                     </tr>
-                    <tr>
+                    <tr id="1">
                         <td>P1</td>
-                        <td><input type="number"></td>
-                        <td><input type="number"></td>
+                        <td><input id="p1-arival" class="input-value" type="number" min="0" value="0" required></td>
+                        <td><input id="p1-burst" class="input-value" type="number" min="0" value="0" required></td>
                         <td>3</td>
                         <td>5</td>
                         <td>5</td>
                     </tr>
-                    <tr>
+                    <tr id="2">
                         <td>P2</td>
-                        <td><input type="number"></td>
-                        <td><input type="number"></td>
-                        <td>3</td>
-                        <td>5</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>P3</td>
-                        <td><input type="number"></td>
-                        <td><input type="number"></td>
-                        <td>3</td>
-                        <td>5</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>P4</td>
-                        <td><input type="number"></td>
-                        <td><input type="number"></td>
+                        <td><input id="p2-arival" class="input-value" type="number" min="0" value="0" required></td>
+                        <td><input id="p1-burst" class="input-value" type="number" min="0" value="0" required></td>
                         <td>3</td>
                         <td>5</td>
                         <td>5</td>
                     </tr>
                 </table>
                 <div class="buttons">
-                    <a href="" class="row-button"><i class="fas fa-redo"></i></a><br>
-                    <a class="row-button" href=""><i class="fas fa-plus"></i></a><br>
-                    <a href="" class="row-button"><i class="fas fa-minus"></i></a>
+                    <a class="row-button" onclick="refresh()"><i class="fas fa-redo"></i></a><br>
+                    <a class="row-button" onclick="addRow()"><i class="fas fa-plus"></i></a><br>
+                    <a class="row-button" onclick="removeRow()"><i class="fas fa-minus"></i></a>
                 </div>
             </div>
             <div class="input-quantum">
                 <label for="quantum">Quantum : </label>
                 <input type="number" min="1" max="99" id="quantum">
             </div>
-            <a href="" class="submit"><i class="fas fa-play"></i>START SIMULATION</a>
+            <a class="submit" id="submit" onclick="runSimulation()"><i class="fas fa-play"></i>START SIMULATION</a>
         </div>
     </div>
     <!-- Content -->
-    <div id="container-fluid" style="margin-bottom: 100px;">
-        <div class="row justify-content-center">
+    <div id="container-fluid" style="margin-bottom: 100px;line-height: 1;">
+        <div id="root" class="row justify-content-center">
             <!-- first -->
-            <div class="algos" style="width: 10%;">
+            <!-- <div class="algos" style="width: 10%;">
                 <div class="line title" style="background-color: blue;">name</div>
                 <div class="line justify-content-between" style="text-align: left;background-color: white;border-right: 0px;">
-                    <div style="position: absolute; left: 0px;">0</div>
-                    <!-- <div style="position: absolute; right: 0px">54</div> -->
+                    <div style="position: absolute; left: -4px; padding-left: 5px;">0</div>
+                    <div class="times" style="position: absolute; right: -2px">54</div>
                 </div>
-            </div>
+            </div> -->
             <!-- middle -->
-            <div class="algos" style="width: 10%;">
+            <!-- <div class="algos" style="width: 10%;">
                 <div class="line title" style="background-color: blue;">name</div>
                 <div class="line justify-content-between" style="text-align: left;background-color: white;border-right: 0px;">
-                    <div style="position: absolute; left: -5px;">0</div>
-                    <!-- <div style="position: absolute; right: 0px">54</div> -->
+                    <div style="position: absolute; left: -1px; padding-left: 5px;">0</div>
+                    <div class="times" style="position: absolute; right: -2px">54</div>
                 </div>
-            </div>
+            </div> -->
             <!-- last -->
-            <div class="algos" style="width: 10%;">
+            <!-- <div class="algos" style="width: 10%;">
                 <div class="line title" style="background-color: blue;">name</div>
                 <div class="line justify-content-between" style="text-align: left;background-color: white;border-right: 0px;">
-                    <div style="position: absolute; left: -5px;">0</div>
-                    <div style="position: absolute; right: -2px">54</div>
+                    <div style="position: absolute; left: 1px; padding-left: 5px;">0</div>
+                    <div class="times" style="position: absolute; right: -2px">54</div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!--Footer  -->

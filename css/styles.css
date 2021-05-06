@@ -144,14 +144,18 @@ body
     /* padding-left: 10px; */
     margin-left: 10px;
 }
-.navigation-links,.small-nav-links
+.simulation-btn
+{
+    text-align: end;
+}
+.navigation-links,.small-nav-links,.simulation-btn .simulate
 {
     /* padding: 0px 20px; */
     color: #99B0D5;
     position: relative;
     font-size: 1.5vw;
 }
-.navigation-links::before,.small-nav-links::before{
+.navigation-links::before,.small-nav-links::before,.simulation-btn .simulate::before{
     content: "";
     position: absolute;
     width: 98%;
@@ -163,7 +167,7 @@ body
     transform: scaleX(0);
     transition: all 0.3s ease-in-out;
 }
-.navigation-links:hover::before,.small-nav-links:hover::before{
+.navigation-links:hover::before,.small-nav-links:hover::before,.simulation-btn .simulate:hover::before{
     visibility: visible;
     transform: scaleX(1);
 }
@@ -195,12 +199,26 @@ body
 }
 
 .algoName{
-    padding: 10px;
     background-color: #E0E0E0;
 }
 .algoName-title{
     /* width: 84%; */
     display: inline-block;
+    padding: 10px;
+}
+.algoName-title::after
+{
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+.active{
+    /* background-color: grey; */
+}
+.active:after {
+  content: "\2212";
 }
 .Plus-sign{
     /* width: 15%; */
@@ -219,6 +237,14 @@ body
 .algoContent{
     padding-top: 10px;
     max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.simulation-btn .simulate,.simulation-btn:hover .simulate
+{
+    cursor: pointer;
+    text-decoration: none;
+    color: #091440;
 }
 table
 {
@@ -262,11 +288,30 @@ th,td{
 }
 .input-quantum{
     margin-bottom: 20px;
+    display: none;
 }
 #quantum{
     width: 70px;
     height: 30px;
     text-align: center;
+}
+.times{
+    padding-right: 5px;
+}
+.times::after
+{
+    content: "";
+    width: 2px;
+    height: 98%;
+    background-color: black;
+    position: absolute;
+    right: 0px;
+}
+#container-fluid{
+    /* display: none; */
+    max-width: 0px;
+    /* overflow: hidden; */
+    transition: max-width 2s linear;
 }
 /* Footer */
 .footer

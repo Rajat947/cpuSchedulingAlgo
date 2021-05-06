@@ -1,6 +1,15 @@
 // var inputArray = [["p1",1,7], ["p2",3,3], ["p3",6,2], ["p4",7,10], ["p5",9,8]];
+function comparator(a,b){
+    if(a[1] === b[1])
+    {
+        return a[2]-b[2];
+    }else{
+        return a[1]-b[1];
+    }
+}
 var sjfNonPreemption = function(inputArray){
-    inputArray.sort((a,b) => a[1] - b[1]);
+    // console.log(inputArray);
+    inputArray.sort(comparator);
     var blocks = [];
     var process = {};
     var count = 0;
@@ -50,8 +59,7 @@ var sjfNonPreemption = function(inputArray){
         process[cur.name].completion = cur.end;
         process[cur.name].turnaround = process[cur.name].completion - process[cur.name].start;
         process[cur.name].waiting = process[cur.name].turnaround - process[cur.name].burst;
-        cur.width = Math.floor(((cur.end-cur.start)/timer)*99);
+        cur.width = parseInt(Math.floor(((cur.end-cur.start)/timer)*99));
     });
-    console.log(blocks);
-    console.log(process);
+    return [process,blocks];
 }

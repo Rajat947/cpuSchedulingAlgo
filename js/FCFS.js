@@ -29,7 +29,7 @@ var fcfs = function(inputArray){
     blocks.map(cur=>{
         var element = cur.end-cur.start;
         var percentage = Math.floor((element/timer)*95);
-        cur.width = percentage;
+        cur.width = parseInt(percentage);
     });
-    
+    return [process,blocks];
 }

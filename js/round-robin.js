@@ -1,6 +1,7 @@
 var rr = function(inputArray, quantum){
     // var inputArray = [["p1",0,10], ["p2",2,20], ["p3",6,30]];
     // var quantum = 2;
+    quantum = parseInt(quantum);
     var blocks = [];
     var process = {};
     var queue = new Queue(inputArray.length);
@@ -22,7 +23,7 @@ var rr = function(inputArray, quantum){
         var element = queue.remove();
         if(element[2] > quantum){
             element[2] = element[2] - quantum;
-            let tempBlock = new Block(element[0],timer,timer+quantum);
+            let tempBlock = new Block(element[0],parseInt(timer),parseInt(timer+quantum));
             blocks.push(tempBlock);
             timer+=quantum;
             while(index < inputArray.length && timer >= inputArray[index][1])
@@ -33,7 +34,7 @@ var rr = function(inputArray, quantum){
             queue.add(element);
             
         }else{
-            let tempBlock = new Block(element[0],timer,timer+element[2]);
+            let tempBlock = new Block(element[0],parseInt(timer),parseInt(timer+element[2]));
             blocks.push(tempBlock);
             
             timer+=element[2];
@@ -56,9 +57,7 @@ var rr = function(inputArray, quantum){
     blocks.map(cur=>{
         var element = cur.end-cur.start;
         var percentage = Math.floor((element/timer)*99);
-        cur.width = percentage;
+        cur.width = parseInt(percentage);
     });
-
-    console.log(blocks);
-    console.log(process);
+    return [process,blocks];
 }

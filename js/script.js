@@ -67,3 +67,22 @@ function closenav(){
     document.getElementById("side-menu").style.width = "0";
     document.body.style.backgroundColor = "white";
 }
+function showAlgo()
+{
+    // console.log(event.target);
+    var id = event.target.id;
+    // console.log(id);
+    event.target.classList.toggle("active");
+    var content = document.getElementsByClassName(id)[0];
+    // console.log(content[0]);
+    if (content.style.maxHeight){
+        content.style.maxHeight = null;
+    } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+    } 
+}
+function navigate()
+{
+    var algo = event.target.classList[0]
+    location.href = "./algo.html?algorithm="+algo;
+}
