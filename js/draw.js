@@ -2,6 +2,23 @@ var algo;
 var input;
 var quantum = null;
 
+function updateTable(processes){
+    console.log(processes);
+    for (const key in processes) {
+        if (processes.hasOwnProperty(key)) {
+            const element = processes[key];
+            document.getElementById(key+"-waiting").innerHTML = element.waiting;
+            document.getElementById(key+"-turnaround").innerHTML = element.turnaround;
+            document.getElementById(key+"-completion").innerHTML = element.completion;
+        }
+    }
+    let rows = document.getElementsByClassName("table-visiblity");
+    for(let i = 0; i<rows.length; i++)
+    {
+        rows[i].style.display = "table-cell";
+    }
+}
+
 function addBlocks(blocks){
     var element = document.getElementById("root");
     blocks.map( (cur,index)=>{
@@ -35,7 +52,7 @@ function addBlocks(blocks){
             element.insertAdjacentHTML('beforeend',html);
         }
     });
-    console.log(blocks);
+    // console.log(blocks);
     element.parentNode.style.maxWidth = "100%";
 }
 
@@ -43,6 +60,8 @@ function runSimulation()
 {
     let targetElement = event.target;
     if(!targetElement.classList.contains("done")){
+        document.getElementById("addRowBtn").classList.add("simulation-done");
+        document.getElementById("removeRowBtn").classList.add("simulation-done");
         let elements = document.getElementsByClassName("input-value");
         var processes = [];
         for(let i = 0; i<elements.length; i++){
@@ -69,19 +88,24 @@ function runSimulation()
             }
         }
         addBlocks(blocks);
+        updateTable(process);
         targetElement.classList.add("done");
     }
 }
 
 function addRow()
 {
-    let element = document.getElementById("table");
-    let noOfRows = element.rows.length;
-    let html = `<tr id="${noOfRows}"><td>P${noOfRows}</td><td><input id="p${noOfRows}-arival" class="input-value" type="number" min="0" value="0" required></td><td><input id="p${noOfRows}-burst" class="input-value" type="number" min="0" value="0" required></td><td>3</td><td>5</td><td>5</td></tr>`
-    element.insertAdjacentHTML('beforeend',html);
+    if(!document.getElementById("addRowBtn").classList.contains("simulation-done")){
+        let element = document.getElementById("table");
+        let noOfRows = element.rows.length;
+        let html = `<tr id="${noOfRows}"><td>P${noOfRows}</td><td><input id="p${noOfRows}-arival" class="input-value" type="number" min="0" value="0" required></td><td><input id="p${noOfRows}-burst" class="input-value" type="number" min="0" value="0" required></td><td  class="table-visiblity"  id="p${noOfRows}-waiting">3</td><td  class="table-visiblity" id="p${noOfRows}-turnaround">5</td><td class="table-visiblity" id="p${noOfRows}-completion">5</td></tr>`
+        element.insertAdjacentHTML('beforeend',html);
+    }
 }
 function refresh()
 {
+    document.getElementById("addRowBtn").classList.remove("simulation-done");
+    document.getElementById("removeRowBtn").classList.remove("simulation-done");
     let elements = document.getElementsByClassName("input-value");
     for(let i = 0; i<elements.length; i++){
         elements[i].value = "0";
@@ -90,21 +114,29 @@ function refresh()
     rootElement.innerHTML = "";
     rootElement.parentNode.style.maxWidth = "0%";
     document.getElementById("submit").classList.remove("done");
+    let rows = document.getElementsByClassName("table-visiblity");
+    for(let i = 0; i<rows.length; i++)
+    {
+        rows[i].style.display = "none";
+    }
 }
 function removeRow()
 {
-    let element = document.getElementById("table");
-    let noOfRows = element.rows.length;
-    if(noOfRows>3)
-    {
-        let rowToDelete = document.getElementById(`${noOfRows-1}`);
-        rowToDelete.parentNode.removeChild(rowToDelete);
+    if(!document.getElementById("removeRowBtn").classList.contains("simulation-done")){
+        let element = document.getElementById("table");
+        let noOfRows = element.rows.length;
+        if(noOfRows>3)
+        {
+            let rowToDelete = document.getElementById(`${noOfRows-1}`);
+            rowToDelete.parentNode.removeChild(rowToDelete);
+        }
     }
 }
 (function(){
     let url = window.location.href;
     let url_str = new URL(url);
     algo = url_str.searchParams.get("algorithm");
+    document.getElementById(algo).style.display = "block";
     if(algo === "RR"){
         document.getElementById("quantum").parentNode.style.display = "block";
     }

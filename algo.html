@@ -24,8 +24,102 @@
             </div>
         </div>
     </div>
+    <!-- Algorithm Description and example -->
+    <div class="content" id="content">
+        <!-- FCFS -->
+        <div class="FCFS container-fluid mainContent" id="FCFS" style="display: none;">
+            <div class="row title">
+                <div class="title-name"> FIRST COME FIRST SERVE</div>
+            </div>
+            <div class="row detail">
+                FCFS (First-come-First-serve) follows the principle of FIFO (First-in-First-out). It is the simplest scheduling algorithm. FCFS simply queues processes in the order that they arrive in the ready queue. In this, the process which comes first will be executed first and the next process starts only after the previous gets fully executed. It is a non-preemptive algorithm. Let's look at this problem: <br>
+                <div class="alog-image">
+                    <img src="Images/fcfs.png" alt="fcfs">
+                </div>
+                Only the processes in the ready queue are to be considered. Since there is no preemption, once the job starts it is going to run until its completion. Now let's look at the Gantt chart: <br>
+                <div class="alog-image">
+                    <img src="Images/fcfs-gantt-chart.png" alt="fcfs-gantt-chart">
+                </div>
+                Now, let's compute each type of time using concepts and formulae, that we studied in the previous lecture. Now the chart looks like this: <br>
+                <div class="alog-image">
+                    <img src="Images/fcfs-table.png" alt="fcfs-table">
+                </div>
+                So, Average waiting time = (0+1+6+9+17)/5 = 33/5 <br>
+                and Average turn-around time = (2+7+10+18+29)/5 = 74/5
+            </div>
+        </div>
+        <!-- SJF -->
+        <div class="SJF container-fluid mainContent" id="SJF"  style="display: none;">
+            <div class="row title">
+                <div class="title-name">SHORTEST JOB FIRST</div>
+            </div>
+            <div class="row detail">
+                Shortest Job First (SJF) is an algorithm in which the process having the smallest execution time is chosen for the next execution. 
+                This scheduling method can be preemptive or non-preemptive. It significantly reduces the average waiting time for other processes awaiting execution.
+                In non-preemptive version of this, the first process assigned to the CPU is executed till completion, then the process whose burst time is minimum is assigned next to the CPU and hence it continues.
+                While in preemptive version, the process with the smallest amount of time remaining until completion is selected to execute. Since the currently executing process is the one with the shortest amount of time remaining by definition, and since that time should only reduce as execution progresses, processes will always run until they complete or a new process is added that requires a smaller amount of time.
+                <div>
+                    Let's look at the following <b><i>non-preemptive</i></b> SJFS problem and understand the stepwise execution:
+                </div>
+                <div class="alog-image">
+                    <img src="Images/sjf-non-preemptive.png" alt="sjf-non-preemptive">
+                </div>
+                Now lets draw the Gantt chart to the following problem: <br>
+                <div class="alog-image">
+                    <img src="Images/sjf-non-preemptive-gantt-chart.png" alt="sjf-non-preemptive-gantt-chart">
+                </div>
+                Therefore the final chart showing all type of times are as follows: <br>
+                <div class="alog-image">
+                    <img src="Images/sjf-non-preemptive-table.png" alt="sjf-non-preemptive-table">
+                </div>
+                So, Average turn-around time = (5+11+6+17)/4 = 39/4 <br>
+                and Average waiting time = (0+7+3+9)/4 = 19/4 <br>
+                <div>
+                    Let's look at the following <b><i>preemptive</i></b> SJFS problem and understand the stepwise execution:
+                </div>
+                <div class="alog-image">
+                    <img src="Images/sjf.png" alt="sjf">
+                </div>
+            </div>
+            At first, the P0 is scheduled and it runs for 1 unit of time. P1 also around at 1 unit. So, now the remaining time of P0(i.e., 7) is compared to the burst time of P1(i.e., 4). The lesser is scheduled, here P1 is scheduled. Again it runs for 1 unit when P2 arrives. The same comparison is done. Since P1 has 3 remaining unit time which is less than P2, it is continued to be scheduled. At 3 P3 also arrives whose burst time is 5. Being more than the remaining time of P2 that is 2, P2 is continued to be scheduled until completion. Then P3 is scheduled whose burst time is 5. This runs till completion followed by P2.
+            All the breakdowns can be seen in the below and the Gantt chart: <br>
+            <div class="alog-image">
+                <img src="Images/sjf-gantt-chart.png" alt="sjf-gantt-chart">
+            </div>
+            Therefore the final chart showing all type of times are as follows: <br>
+            <div class="alog-image">
+                <img src="Images/sjf-table.png" alt="sjf-table">
+            </div>
+            So, Average turn around time = (17+4+24+7)/4 = 52/4 <br>
+            and Average waiting time = (9+0+15+2)/4 = 26/4
+        </div>
+        <!-- RR -->
+        <div class="RR container-fluid mainContent" id="RR"  style="display: none;">
+            <div class="row title">
+                <div class="title-name">ROUND ROBIN</div>
+            </div>
+            <div class="row detail">
+                Round-Robin is a CPU scheduling algorithm where each process is assigned a fixed time slot (also called quantum). Once that chunk of time is completed, the process is context-switched with the next in the queue. It is the most common and practically usable scheduling algorithm, as it doesn't require the system to estimate the burst-time of a process. Calculation of burst-time is practically not possible as no one can predict how long a process will take to execute. It although has a minor disadvantage of the overhead of context-switching (some time gets wasted in the process). Let's try to understand the working using the following problem, with given Time Quantum of 2 units: <br>
+                <div class="alog-image">
+                    <img src="Images/rr.png" alt="rr">
+                </div>
+                Each process runs for 2 unit of time, followed by the next process. The whole process runs in a circular manner.
+                Here is the Gantt chart of the above problem: <br>
+                <div class="alog-image">
+                    <img src="Images/rr-gantt-chart.png" alt="rr-gantt-chart">
+                </div>
+                Here is the final chart showing all type of times: <br>
+                <div class="alog-image">
+                    <img src="Images/rr-table.png" alt="rr-table">
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Table -->
     <div class="table container-fluid" style="display: grid;">
+        <div class="title" style="width: fit-content;">
+            <div class="title-name" style="display: inline-block;">SIMULATE</div>
+        </div>
         <div class="content">
             <div class="table-content">
                 <table id="table">
@@ -33,31 +127,31 @@
                         <th> PROCESS</th>
                         <th> ARRIVAL TIME</th>
                         <th> BURST TIME</th>
-                        <th>WAITING TIME</th>
-                        <th>TURNAROUND TIME</th>
-                        <th>COMPLETION TIME</th>
+                        <th class="table-visiblity">WAITING TIME</th>
+                        <th class="table-visiblity">TURNAROUND TIME</th>
+                        <th class="table-visiblity">COMPLETION TIME</th>
                     </tr>
                     <tr id="1">
                         <td>P1</td>
                         <td><input id="p1-arival" class="input-value" type="number" min="0" value="0" required></td>
                         <td><input id="p1-burst" class="input-value" type="number" min="0" value="0" required></td>
-                        <td>3</td>
-                        <td>5</td>
-                        <td>5</td>
+                        <td class="table-visiblity" id="p1-waiting">3</td>
+                        <td class="table-visiblity" id="p1-turnaround">5</td>
+                        <td class="table-visiblity" id="p1-completion">5</td>
                     </tr>
                     <tr id="2">
                         <td>P2</td>
                         <td><input id="p2-arival" class="input-value" type="number" min="0" value="0" required></td>
                         <td><input id="p1-burst" class="input-value" type="number" min="0" value="0" required></td>
-                        <td>3</td>
-                        <td>5</td>
-                        <td>5</td>
+                        <td class="table-visiblity"  id="p2-waiting">3</td>
+                        <td class="table-visiblity"  id="p2-turnaround">5</td>
+                        <td class="table-visiblity"  id="p2-completion">5</td>
                     </tr>
                 </table>
                 <div class="buttons">
                     <a class="row-button" onclick="refresh()"><i class="fas fa-redo"></i></a><br>
-                    <a class="row-button" onclick="addRow()"><i class="fas fa-plus"></i></a><br>
-                    <a class="row-button" onclick="removeRow()"><i class="fas fa-minus"></i></a>
+                    <a class="row-button" id="addRowBtn" onclick="addRow()"><i class="fas fa-plus"></i></a><br>
+                    <a class="row-button" id="removeRowBtn" onclick="removeRow()"><i class="fas fa-minus"></i></a>
                 </div>
             </div>
             <div class="input-quantum">

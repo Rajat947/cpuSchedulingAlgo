@@ -246,6 +246,19 @@ body
     text-decoration: none;
     color: #091440;
 }
+.detail
+{
+    margin-left: 10px;
+}
+.table{
+    margin: 30px 0px;
+}
+.table .content{
+    font-size: 1vw;
+}
+.table-content{
+    margin-bottom: 20px;
+}
 table
 {
     /* margin: 0px auto;     */
@@ -256,7 +269,7 @@ table,th,td{
     border: 1px solid black;
 }
 th,td{
-    padding: 10px;
+    padding: 10px 5px;
 }
 .content{
     display: inline-block;
@@ -313,6 +326,9 @@ th,td{
     /* overflow: hidden; */
     transition: max-width 2s linear;
 }
+.table > :not(caption) > * > *{
+    padding: 0.25rem;
+}
 /* Footer */
 .footer
 {
@@ -343,6 +359,20 @@ th,td{
 .algos .title{
     padding: 3vw 2vw;
     width: 100%;
+}
+.algo-footer{
+    /* position: absolute;
+    bottom: 0px;
+    width: 100%; */
+    margin-bottom: 0px;
+}
+.alog-image{
+    text-align: center;
+    margin: 5px 0px;
+}
+.table-visiblity
+{
+    display: none;
 }
 @media screen and (max-width: 576px){
     /* .header{

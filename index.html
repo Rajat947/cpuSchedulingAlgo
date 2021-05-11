@@ -33,13 +33,8 @@
                 </a>
             </li>
             <li class="links">
-                <a href="#PROS" class="navigation-links">
-                    <p>PROS</p>
-                </a>
-            </li>
-            <li class="links">
-                <a href="#CONS" class="navigation-links">
-                    <p>CONS</p>
+                <a href="#GOALS" class="navigation-links">
+                    <p>GOALS OF CPU SCHEDULING</p>
                 </a>
             </li>
             <li class="links">
@@ -92,14 +87,8 @@
                 <div class="bar"></div>
             </li>
             <li class="links">
-                <a id="4" href="#PROS" class="navigation-links" onclick="addPadding()" onscroll="removePad()">
-                    <p>PROS</p>
-                </a>
-                <div class="bar"></div>
-            </li>
-            <li class="links">
-                <a id="5" href="#CONS" class="navigation-links" onclick="addPadding()" onscroll="removePad()">
-                    <p>CONS</p>
+                <a id="4" href="#GOALS" class="navigation-links" onclick="addPadding()" onscroll="removePad()">
+                    <p>GOALS OF CPU SCHEDULING</p>
                 </a>
             </li>
         </ul>
@@ -111,14 +100,41 @@
                 <div class="title-name"> What is Cpu Scheduling</div>
             </div>
             <div class="row detail">
-                CPU scheduling is a process that allows one process to use the CPU while the execution of another
-                process is on hold(in waiting state) due to unavailability of any resource like I/O etc, thereby
-                making full use of CPU. The aim of CPU scheduling is to make the system efficient, fast, and fair.
-               <br> 
-                Whenever the CPU becomes idle, the operating system must select one of the processes in the ready
-                queue to be executed. The selection process is carried out by the short-term
-                scheduler (or CPU scheduler). The scheduler selects from among the processes in memory that are
-                ready to execute and allocates the CPU to one of them.
+                CPU scheduling is a process that allows one process to use the CPU while the execution of another process is on hold(in waiting state) due to unavailability of any resource like I/O etc, thereby making full use of CPU. The aim of CPU scheduling is to make the system efficient, fast, and fair.
+                Whenever the CPU becomes idle, the operating system must select one of the processes in the ready queue to be executed. The selection process is carried out by the short-term scheduler (or CPU scheduler). The scheduler selects from among the processes in memory that are ready to execute and allocates the CPU to one of them.
+                <div style="margin-left: 5px;">
+                    <i style="margin-left: -5px;"><b>Process Scheduler :</b></i>
+                    <ol>
+                        <li> <span style="text-decoration: underline;">Long Term or job scheduler</span> : It brings the new process to the 'Ready State'. It controls Degree of Multi-programming, i.e., number of process present in ready state at any point of time. It is important that the long-term scheduler make a careful selection of both IO and CPU bound processes.</li>
+                        <li> <span style="text-decoration: underline;">Short term or CPU scheduler</span> : It is responsible for selecting one process from ready state for scheduling it on the running state.
+                           <br><i>Note </i>: Short-term scheduler only selects the process to schedule it doesn't load the process on running.</li>
+                        <li><span  style="text-decoration: underline;">Medium-term scheduler</span> : It is responsible for suspending and resuming the process. It mainly does swapping (moving processes from main memory to disk and vice versa). Swapping may be necessary to improve the process mix or because a change in memory requirements has overcommitted available memory, requiring memory to be freed up.
+                        </li>
+                    </ol>
+                </div>
+                <div style="margin-left: 5px;">
+                    <i style="margin-left: -5px;"><b>Types of CPU Scheduling : </b></i><br>
+                    CPU scheduling decisions may take place under the following four circumstances: <br>
+                    <ol>
+                        <li>When a process switches from the running state to the waiting state(for I/O request or invocation of wait for the termination of one of the child processes).</li>
+                        <li>When a process switches from the running state to the ready state (for example, when an interrupt occurs).
+                        </li>
+                        <li>When a process switches from the waiting state to the ready state(for example, completion of I/O).
+                        </li>
+                        <li>When a process terminates.
+                        </li>
+                    </ol>
+                </div>
+                <div style="margin-left: 5px;">
+                    <i style="margin-left: -5px;"><b>Dispatcher : </b></i><br>
+                    The dispatcher is the module that gives control of the CPU to the process selected by the short-term scheduler. This function involves:<br>
+                    <ul style="margin-bottom: 0px;">
+                        <li>Switching context</li>
+                        <li>Switching to user mode</li>
+                        <li>Jumping to the proper location in the user program to restart that program from where it left last time.</li>
+                    </ul>
+                    The dispatcher should be as fast as possible, given that it is invoked during every process switch. The time taken by the dispatcher to stop one process and start another process is known as the <i>Dispatch Latency</i>.
+                </div>
             </div>
         </div>
         <div class = "NeddOfCpuScheduling container-fluid mainContent" id="NEED">
@@ -126,26 +142,9 @@
                 <div class="title-name">Need of Cpu Scheduling</div>
             </div>
             <div class="row detail">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
+                A typical process involves both I/O time and CPU time. In a uni programming system like MS-DOS, time spent waiting for I/O is wasted and CPU is free during this time. In multi programming systems, one process can use CPU while another is waiting for I/O. This is possible only with process scheduling.
+                But, if the long term scheduler picks more I/O bound processes then most of the time, the CPU remains idol. The task of Operating system is to optimize the utilization of resources.
+                If most of the running processes change their state from running to waiting then there may always be a possibility of deadlock in the system. Hence to reduce this overhead, the OS needs to schedule the jobs to get the optimal utilization of CPU and to avoid the possibility to deadlock.
             </div>
         </div>
         <div class = "Algorithms container-fluid mainContent" id="ALGORITHMS">
@@ -153,40 +152,35 @@
                 <div class="title-name">Algorithms</div>
             </div>
             <div class="row detail">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
+                CPU scheduling deals with the problem of deciding which of the processes in
+                the ready queue is to be allocated the CPU ’s core. There are many different CPU -
+                scheduling algorithms.
+                Different CPU-scheduling algorithms have different properties, and the choice
+                of a particular algorithm may favor one class of processes over another. In
+                choosing which algorithm to use in a particular situation, we must consider
+                the properties of the various algorithms like how much CPU is utilizeed by algorithm, 
+                what is Throughput of algorithm, what is turnaround time, what is waiting time etc.
             </div>
-            <div class="row"> 
+            <div class="row" style="margin-left: 10px; margin-right: 10px;"> 
                 <div class="algo-detail container-fluid">
                     <div class="row algoName">
                         <div id="FCFS"  class="row algoName-title" onclick="showAlgo()">FIRST COME FIRST SERVE</div>
                     </div>
                     <div class = "FCFS row algoContent">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore
-                        rem exercitationem placeat fuga aliquam, deleniti minima, doloribus vero
-                        amet accusantium praesentium magni magnam illo
-                        libero, non voluptas fugiat corporis explicabo?
+                        FCFS (First-come-First-serve) follows the principle of FIFO (First-in-First-out). It is the simplest scheduling algorithm. FCFS simply queues processes in the order that they arrive in the ready queue. In this, the process which comes first will be executed first and the next process starts only after the previous gets fully executed. It is a non-preemptive algorithm.
+                        <div>
+                            <i><b>Characteristics</b></i>
+                            <ol>
+                                <li>The simplest form of a CPU scheduling algorithm</li>
+                                <li>Easy to implement</li>
+                                <li>Non-preemptive</li>
+                                <li>Average Waiting Time is not optimal</li>
+                                <li>Not an ideal technique for time-sharing systems.</li>
+                                <li>Can not utilize resources in parallel: Results in Convoy effect. Convoy Effect is a phenomenon associated with the First Come First Serve (FCFS) algorithm, in which the whole Operating System slows down due to a few slow processes. Consider a situation when many IO-bound processes are there and one CPU bound process. The IO bound processes have to wait for CPU bound process when the CPU bound process acquires CPU. The IO-bound process could have taken CPU for some time, then used IO devices</li>
+                            </ol>
+                        </div>
                         <div class="simulation-btn">
-                            <!-- href="algo.html"  -->
-                            <a class="FCFS simulate" onclick="navigate()">&#8811 Simulate</a>
+                            <a class="FCFS simulate" onclick="navigate()">&#8811 Know More</a>
                         </div>
                     </div>
                 </div>
@@ -195,13 +189,24 @@
                         <div id="SJF"  class="row algoName-title" onclick="showAlgo()">SHORTEST JOB FIRST</div>
                     </div>
                     <div class = "SJF row algoContent">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore
-                        rem exercitationem placeat fuga aliquam, deleniti minima, doloribus vero
-                        amet accusantium praesentium magni magnam illo
-                        libero, non voluptas fugiat corporis explicabo?
+                        Shortest Job First (SJF) is an algorithm in which the process having the smallest execution time is chosen for the next execution. 
+                        This scheduling method can be preemptive or non-preemptive. It significantly reduces the average waiting time for other processes awaiting execution.
+                        In non-preemptive version of this, the first process assigned to the CPU is executed till completion, then the process whose burst time is minimum is assigned next to the CPU and hence it continues.
+                        While in preemptive version, the process with the smallest amount of time remaining until completion is selected to execute. Since the currently executing process is the one with the shortest amount of time remaining by definition, and since that time should only reduce as execution progresses, processes will always run until they complete or a new process is added that requires a smaller amount of time.
+                        <div>
+                            <i><b>Characteristics</b></i>
+                            <ol>
+                                <li>SJF is frequently used for long term scheduling.</li>
+                                <li>It leads to the starvation as if processes with shorter burst time keep coming then process with longer burst time has to wait.</li>
+                                <li>SJF method gives the lowest average waiting time for a specific set of processes.</li>
+                                <li>For Short-Term Scheduling, we need to predict the value of the next burst time.</li>
+                                <li>Job completion time must be known earlier, but it is hard to predict.</li>
+                                <li>This algorithm may cause very long turnaround times or starvation.</li>
+                            </ol>
+                        </div>
                         <div class="simulation-btn">
                             <!-- href="algo.html"  -->
-                            <a class="SJF simulate" onclick="navigate()">&#8811 Simulate</a>
+                            <a class="SJF simulate" onclick="navigate()">&#8811 Know More</a>
                         </div>
                     </div>
                 </div>
@@ -210,70 +215,59 @@
                         <div id="RR"  class="row algoName-title" onclick="showAlgo()">ROUND ROBIN</div>
                     </div>
                     <div class = "RR row algoContent">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore
-                        rem exercitationem placeat fuga aliquam, deleniti minima, doloribus vero
-                        amet accusantium praesentium magni magnam illo
-                        libero, non voluptas fugiat corporis explicabo?
+                        Round-Robin is a CPU scheduling algorithm where each process is assigned a fixed time slot (also called quantum). Once that chunk of time is completed, the process is context-switched with the next in the queue. It is the most common and practically usable scheduling algorithm, as it doesn't require the system to estimate the burst-time of a process. Calculation of burst-time is practically not possible as no one can predict how long a process will take to execute. It although has a minor disadvantage of the overhead of context-switching (some time gets wasted in the process).
+                        <div>
+                            <i><b>Characteristics</b></i>
+                            <ol>
+                                <li>Round robin is a pre-emptive algorithm</li>
+                                <li>The CPU is shifted to the next process after fixed interval time, which is called time quantum/time slice.</li>
+                                <li>The process that is preempted is added to the end of the queue.</li>
+                                <li>It doesn't face the issues of starvation or convoy effect.</li>
+                                <li>This method spends more time on context switching</li>
+                                <li>Its performance heavily depends on time quantum and finding a correct time quantum is a quite difficult task in this system.</li>
+                                <li>Round-robin scheduling doesn't give special priority to more important tasks.</li> 
+                            </ol>
+                        </div>
                         <div class="simulation-btn">
                             <!-- href="algo.html"  -->
-                            <a class="RR simulate" onclick="navigate()">&#8811 Simulate</a>
+                            <a class="RR simulate" onclick="navigate()">&#8811 Know More</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class = "pros container-fluid mainContent" id="PROS">
+        <div class = "pros container-fluid mainContent" id="GOALS">
             <div class="row title">
-                <div class="title-name">PROS</div>
+                <div class="title-name">GOALS OF CPU SCHEDULING</div>
             </div>
             <div class="row detail">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-            </div>
-        </div>
-        <div class = "cons container-fluid mainContent" id="CONS">
-            <div class="row title">
-                <div class="title-name">CONS</div>
-            </div>
-            <div class="row detail">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-                maxime dicta ex laudantium, asperiores veniam harum suscipit odit,
-                voluptatem nisi ipsam soluta ipsum sunt deleniti tempora omnis! Aliquam,
-                aliquid quia!
+                Different goals for which we use CPU scheduling are as follows : <br>
+                <div style="margin-left: 5px;">
+                    <b style="margin-left: -5px;">1. <i>Maximum CPU Utilization </i> : </b> <br>
+                    We want to keep the CPU as busy as possible. To make out the best use of the CPU and not to waste any CPU cycle, the CPU would be working most of the time(Ideally 100% of the time). Considering a real system, CPU usage should range from 40% (lightly loaded) to 90% (heavily loaded.)
+                </div>
+                <div style="margin-left: 5px;">
+                    <b style="margin-left: -5px;">2. <i>Maximum Throughput </i> : </b> <br>
+                    It is the total number of processes completed per unit of time or rather says the total amount of work done in a unit of time. This may range from 10/second to 1/hour depending on the specific processes.
+                    So the CPU must try to execute maximum number of jobs per unit time.
+                </div>
+                <div style="margin-left: 5px;">
+                    <b style="margin-left: -5px;">3. <i>Minimum Turnaround time </i> : </b> <br>
+                    It is the amount of time taken to execute a particular process, i.e. The interval from the time of submission of the process to the time of completion of the process(Wall clock time).
+                    We want it to be as minimum as possible.
+                </div>
+                <div style="margin-left: 5px;">
+                    <b style="margin-left: -5px;">4. <i>Minimum Waiting Time </i> : </b> <br>
+                    The sum of the periods spent waiting in the ready queue amount of time a process has been waiting in the ready queue to acquire get control on the CPU.
+                </div>
+                <div style="margin-left: 5px;">
+                    <b style="margin-left: -5px;">5. <i>Minimum Response Time </i> : </b> <br>
+                    Amount of time it takes from when a request was submitted until the first response is produced. Remember, it is the time till the first response and not the completion of process execution(final response).
+                </div>
+                <div style="margin-left: 5px;">
+                    <b style="margin-left: -5px;">6. <i>Fair CPU Allocation </i> : </b> <br>
+                    There are many processes in our system waiting for CPU. We have to make sure that no process starve for CPU i.e no process should wait for so long due to it's burst time or any other property.
+                </div>
             </div>
         </div>
     </div>
