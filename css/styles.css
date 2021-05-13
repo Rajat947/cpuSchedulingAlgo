@@ -353,11 +353,11 @@ th,td{
     display: inline-block;
 }
 .algos .line{
-    font-size: 2.5vw;
+    font-size: 2vw;
     --bs-gutter-x: 0;
 }
 .algos .title{
-    padding: 3vw 2vw;
+    padding: 4vw 6px;
     width: 100%;
 }
 .algo-footer{

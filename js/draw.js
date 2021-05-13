@@ -4,12 +4,18 @@ var quantum = null;
 
 function updateTable(processes){
     console.log(processes);
+    var waitingTime=0;
+    var turnaroundTime=0;
+    var count=0;
     for (const key in processes) {
         if (processes.hasOwnProperty(key)) {
             const element = processes[key];
             document.getElementById(key+"-waiting").innerHTML = element.waiting;
             document.getElementById(key+"-turnaround").innerHTML = element.turnaround;
             document.getElementById(key+"-completion").innerHTML = element.completion;
+            turnaroundTime+=element.turnaround;
+            waitingTime+=element.waiting;
+            count++;
         }
     }
     let rows = document.getElementsByClassName("table-visiblity");
@@ -17,6 +23,7 @@ function updateTable(processes){
     {
         rows[i].style.display = "table-cell";
     }
+    document.getElementById("averageTime").innerHTML=`Average waiting time : ${(waitingTime/count).toFixed(2)} unit time<br>Average Turnaround time: ${(turnaroundTime/count).toFixed(2)} unit time`
 }
 
 function addBlocks(blocks){
@@ -86,6 +93,9 @@ function runSimulation()
                 [process, blocks]=sjfNonPreemption(processes);
                 break;
             }
+            case "SRTF":{
+                [process, blocks] = sjf(processes);
+            }
         }
         addBlocks(blocks);
         updateTable(process);
@@ -104,6 +114,7 @@ function addRow()
 }
 function refresh()
 {
+    document.getElementById("averageTime").innerHTML = "";
     document.getElementById("addRowBtn").classList.remove("simulation-done");
     document.getElementById("removeRowBtn").classList.remove("simulation-done");
     let elements = document.getElementsByClassName("input-value");

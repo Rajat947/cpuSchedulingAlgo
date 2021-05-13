@@ -186,27 +186,53 @@
                 </div>
                 <div class="algo-detail container-fluid">
                     <div class="row algoName">
-                        <div id="SJF"  class="row algoName-title" onclick="showAlgo()">SHORTEST JOB FIRST</div>
+                        <div id="SJF"  class="row algoName-title" onclick="showAlgo()">SHORTEST JOB FIRST (Non-Preemptive)</div>
                     </div>
                     <div class = "SJF row algoContent">
-                        Shortest Job First (SJF) is an algorithm in which the process having the smallest execution time is chosen for the next execution. 
-                        This scheduling method can be preemptive or non-preemptive. It significantly reduces the average waiting time for other processes awaiting execution.
-                        In non-preemptive version of this, the first process assigned to the CPU is executed till completion, then the process whose burst time is minimum is assigned next to the CPU and hence it continues.
-                        While in preemptive version, the process with the smallest amount of time remaining until completion is selected to execute. Since the currently executing process is the one with the shortest amount of time remaining by definition, and since that time should only reduce as execution progresses, processes will always run until they complete or a new process is added that requires a smaller amount of time.
+                        The Shortest-Job-First (SJF) or shortest job next, is a scheduling policy that selects the waiting process with the smallest execution time to execute next. It is a non-preemptive algorithm. Being a non-preemptive algorithm, the first process assigned to the CPU is executed till completion, then the process whose burst time is minimum is assigned next to the CPU and hence it continues.
                         <div>
                             <i><b>Characteristics</b></i>
                             <ol>
-                                <li>SJF is frequently used for long term scheduling.</li>
-                                <li>It leads to the starvation as if processes with shorter burst time keep coming then process with longer burst time has to wait.</li>
-                                <li>SJF method gives the lowest average waiting time for a specific set of processes.</li>
-                                <li>For Short-Term Scheduling, we need to predict the value of the next burst time.</li>
-                                <li>Job completion time must be known earlier, but it is hard to predict.</li>
-                                <li>This algorithm may cause very long turnaround times or starvation.</li>
+                                <li>Shortest Job first has the advantage of having a minimum average waiting time among all scheduling algorithms.</li>
+                                <li>It is a Greedy Algorithm.</li>
+                                <li>It may cause starvation if shorter processes keep coming. This problem can be solved using the concept of ageing.</li>
+                                <li>It is practically infeasible as Operating System may not know burst time and therefore may not sort them. While it is not possible to predict execution time, several methods can be used to estimate the execution time for a job, such as a weighted average of previous execution times. SJF can be used in specialized environments where accurate estimates of running time are available.
+                                </li>
                             </ol>
                         </div>
                         <div class="simulation-btn">
                             <!-- href="algo.html"  -->
                             <a class="SJF simulate" onclick="navigate()">&#8811 Know More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="algo-detail container-fluid">
+                    <div class="row algoName">
+                        <div id="SRTF"  class="row algoName-title" onclick="showAlgo()">SHORTEST JOB FIRST (Preemptive)</div>
+                    </div>
+                    <div class = "SRTF row algoContent">
+                        This is a version of Shortest job first with preemption in which the process with the smallest amount of time remaining until completion
+                        is selected to execute. Since the currently executing process is the one with the shortest amount of time 
+                        remaining by definition, and since that time should only reduce as execution progresses, processes will 
+                        always run until they complete or a new process is added that requires a smaller amount of time.
+                        <div>
+                            <i><b>Characteristics</b></i>
+                            <ol>
+                                <li>Short processes are handled very quickly.
+                                </li>
+                                <li>The system also requires very little overhead since it only makes a decision when a process completes or a new process is added.
+                                </li>
+                                <li>When a new process is added the algorithm only needs to compare the currently executing process with the new process, ignoring all other processes currently waiting to execute.</li>
+                                <li>It has the potential for process starvation.
+                                </li>
+                                <li>Long processes may be held off indefinitely if short processes are continually added.
+                                </li>
+                                <li>It is impractical since it is not possible to know the burst time of every process in ready queue in advance.
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="simulation-btn">
+                            <a class="SRTF simulate" onclick="navigate()">&#8811 Know More</a>
                         </div>
                     </div>
                 </div>

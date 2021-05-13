@@ -51,15 +51,15 @@
         <!-- SJF -->
         <div class="SJF container-fluid mainContent" id="SJF"  style="display: none;">
             <div class="row title">
-                <div class="title-name">SHORTEST JOB FIRST</div>
+                <div class="title-name">SHORTEST JOB FIRST (non-preemptive)</div>
             </div>
             <div class="row detail">
-                Shortest Job First (SJF) is an algorithm in which the process having the smallest execution time is chosen for the next execution. 
-                This scheduling method can be preemptive or non-preemptive. It significantly reduces the average waiting time for other processes awaiting execution.
-                In non-preemptive version of this, the first process assigned to the CPU is executed till completion, then the process whose burst time is minimum is assigned next to the CPU and hence it continues.
-                While in preemptive version, the process with the smallest amount of time remaining until completion is selected to execute. Since the currently executing process is the one with the shortest amount of time remaining by definition, and since that time should only reduce as execution progresses, processes will always run until they complete or a new process is added that requires a smaller amount of time.
+                The Shortest-Job-First (SJF) or shortest job next, is a scheduling policy that selects the waiting process 
+                with the smallest execution time to execute next. It is a non-preemptive algorithm. Being a 
+                non-preemptive algorithm, the first process assigned to the CPU is executed till completion, 
+                then the process whose burst time is minimum is assigned next to the CPU and hence it continues.
                 <div>
-                    Let's look at the following <b><i>non-preemptive</i></b> SJFS problem and understand the stepwise execution:
+                    Let's look at the following SJF problem and understand the stepwise execution:
                 </div>
                 <div class="alog-image">
                     <img src="Images/sjf-non-preemptive.png" alt="sjf-non-preemptive">
@@ -74,25 +74,37 @@
                 </div>
                 So, Average turn-around time = (5+11+6+17)/4 = 39/4 <br>
                 and Average waiting time = (0+7+3+9)/4 = 19/4 <br>
-                <div>
-                    Let's look at the following <b><i>preemptive</i></b> SJFS problem and understand the stepwise execution:
-                </div>
-                <div class="alog-image">
-                    <img src="Images/sjf.png" alt="sjf">
-                </div>
-            </div>
-            At first, the P0 is scheduled and it runs for 1 unit of time. P1 also around at 1 unit. So, now the remaining time of P0(i.e., 7) is compared to the burst time of P1(i.e., 4). The lesser is scheduled, here P1 is scheduled. Again it runs for 1 unit when P2 arrives. The same comparison is done. Since P1 has 3 remaining unit time which is less than P2, it is continued to be scheduled. At 3 P3 also arrives whose burst time is 5. Being more than the remaining time of P2 that is 2, P2 is continued to be scheduled until completion. Then P3 is scheduled whose burst time is 5. This runs till completion followed by P2.
-            All the breakdowns can be seen in the below and the Gantt chart: <br>
-            <div class="alog-image">
-                <img src="Images/sjf-gantt-chart.png" alt="sjf-gantt-chart">
-            </div>
-            Therefore the final chart showing all type of times are as follows: <br>
-            <div class="alog-image">
-                <img src="Images/sjf-table.png" alt="sjf-table">
-            </div>
-            So, Average turn around time = (17+4+24+7)/4 = 52/4 <br>
-            and Average waiting time = (9+0+15+2)/4 = 26/4
         </div>
+        </div>
+        <!-- SRTF -->
+<div class="SRTF container-fluid mainContent" id="SRTF"  style="display: none;">
+    <div class="row title">
+        <div class="title-name">SHORTEST JOB FIRST (preemptive)</div>
+    </div>
+    <div class="row detail">
+        This is a version of Shortest job first with preemption in which the process with the smallest amount of time remaining until completion
+         is selected to execute. Since the currently executing process is the one with the shortest amount of time 
+         remaining by definition, and since that time should only reduce as execution progresses, processes will 
+        always run until they complete or a new process is added that requires a smaller amount of time.
+        <div>
+            Let's look at the following <b><i>preemptive</i></b> SJFS problem and understand the stepwise execution:
+        </div>
+        <div class="alog-image">
+            <img src="Images/sjf.png" alt="sjf">
+        </div>
+        At first, the P0 is scheduled and it runs for 1 unit of time. P1 also around at 1 unit. So, now the remaining time of P0(i.e., 7) is compared to the burst time of P1(i.e., 4). The lesser is scheduled, here P1 is scheduled. Again it runs for 1 unit when P2 arrives. The same comparison is done. Since P1 has 3 remaining unit time which is less than P2, it is continued to be scheduled. At 3 P3 also arrives whose burst time is 5. Being more than the remaining time of P2 that is 2, P2 is continued to be scheduled until completion. Then P3 is scheduled whose burst time is 5. This runs till completion followed by P2.
+        All the breakdowns can be seen in the below and the Gantt chart: <br>
+        <div class="alog-image">
+        <img src="Images/sjf-gantt-chart.png" alt="sjf-gantt-chart">
+        </div>
+        Therefore the final chart showing all type of times are as follows: <br>
+        <div class="alog-image">
+        <img src="Images/sjf-table.png" alt="sjf-table">
+        </div>
+        So, Average turn around time = (17+4+24+7)/4 = 52/4 <br>
+        and Average waiting time = (9+0+15+2)/4 = 26/4
+    </div>
+</div>
         <!-- RR -->
         <div class="RR container-fluid mainContent" id="RR"  style="display: none;">
             <div class="row title">
@@ -115,6 +127,7 @@
             </div>
         </div>
     </div>
+
     <!-- Table -->
     <div class="table container-fluid" style="display: grid;">
         <div class="title" style="width: fit-content;">
@@ -190,6 +203,10 @@
             </div> -->
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="row" id="averageTime">
+        </div>
+    </div>
     <!--Footer  -->
     <div class="footer algo-footer">
         Made with <i class="fas fa-heart"></i> by Rajat and Rahul Kakkar
@@ -199,6 +216,8 @@
     <script src="js/process.js"></script>
     <script src="js/block.js"></script>
     <script src="js/queue.js"></script>
+    <script src="js/minHeap.js"></script>
+    <script src="js/sjf.js"></script>
     <script src="js/sjf-nonpreemptive.js"></script>
     <script src="js/FCFS.js"></script>
     <script src="js/round-robin.js"></script>
