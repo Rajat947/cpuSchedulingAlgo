@@ -16,6 +16,10 @@ var fcfs = function(inputArray){
             timer = inputArray[i][1];
         }else{
             timer = timer + inputArray[i-1][2];
+            if(timer < inputArray[i][1])
+            {
+                timer = inputArray[i][1];
+            }
         }
         
         var element = new Block(inputArray[i][0], timer, timer+inputArray[i][2]);

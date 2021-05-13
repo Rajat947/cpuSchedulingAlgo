@@ -15,36 +15,55 @@ var rr = function(inputArray, quantum){
 
     var timer = 0; //To keep track of time
     var index = 0; //Index for inputArray
+    var totalCpuTime = 0;
 
     timer = inputArray[index][1];
     queue.add(inputArray[index++]);
-    
-    while(!queue.isEmpty()){
-        var element = queue.remove();
-        if(element[2] > quantum){
-            element[2] = element[2] - quantum;
-            let tempBlock = new Block(element[0],parseInt(timer),parseInt(timer+quantum));
-            blocks.push(tempBlock);
-            timer+=quantum;
-            while(index < inputArray.length && timer >= inputArray[index][1])
-            {
-                queue.add(inputArray[index++]);
+
+    while(true){
+        while(!queue.isEmpty()){
+            var element = queue.remove();
+            if(element[2] > quantum){
+                element[2] = element[2] - quantum;
+                let tempBlock = new Block(element[0],parseInt(timer),parseInt(timer+quantum));
+                blocks.push(tempBlock);
+                timer+=quantum;
+                totalCpuTime+=quantum;
+                while(index < inputArray.length && timer >= inputArray[index][1])
+                {
+                    queue.add(inputArray[index++]);
+                }
+                
+                queue.add(element);
+                
+            }else if(element[2] == 0){
+            }else{
+                let tempBlock = new Block(element[0],parseInt(timer),parseInt(timer+element[2]));
+                blocks.push(tempBlock);
+                
+                timer+=element[2];
+                totalCpuTime+=element[2];
+                process[element[0]].completion = timer;
+                while(index < inputArray.length && timer >= inputArray[index][1])
+                {
+                    queue.add(inputArray[index++]);
+                }
+                element[2] = 0;
+                
             }
-            
-            queue.add(element);
-            
+        }
+        if(timer < inputArray[inputArray.length-1][1]){
+            for(let i =0; i<inputArray.length; i++)
+            {
+                if(timer<inputArray[i][1])
+                {
+                    timer = inputArray[i][1];
+                    queue.add(inputArray[i]);
+                    break;
+                }
+            }
         }else{
-            let tempBlock = new Block(element[0],parseInt(timer),parseInt(timer+element[2]));
-            blocks.push(tempBlock);
-            
-            timer+=element[2];
-            process[element[0]].completion = timer;
-            while(index < inputArray.length && timer >= inputArray[index][1])
-            {
-                queue.add(inputArray[index++]);
-            }
-            element[2] = 0;
-            
+            break;
         }
     }
     for (const key in process) {
@@ -56,7 +75,7 @@ var rr = function(inputArray, quantum){
 
     blocks.map(cur=>{
         var element = cur.end-cur.start;
-        var percentage = Math.floor((element/timer)*99);
+        var percentage = Math.floor((element/totalCpuTime)*99);
         cur.width = parseInt(percentage);
     });
     return [process,blocks];

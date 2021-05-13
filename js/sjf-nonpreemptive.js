@@ -14,6 +14,7 @@ var sjfNonPreemption = function(inputArray){
     var process = {};
     var count = 0;
     var index = 0;
+    var processed = false;
     var timer = inputArray[index][1];
     var element = new Block(inputArray[index][0], timer, timer+inputArray[index][2]);
     blocks.push(element);
@@ -40,10 +41,24 @@ var sjfNonPreemption = function(inputArray){
                 min = inputArray[i][2];
                 element = inputArray[i];
                 index = i;
+                processed = true;
             }else if(min > inputArray[i][2]){
                 min = inputArray[i][2];
                 element = inputArray[i];
                 index = i;
+                processed = true;
+            }
+        }
+        if(!processed && count < inputArray.length){
+            for(let i =1; i<inputArray.length; i++)
+            {
+                if(inputArray[i] == null){
+                    continue;
+                }
+                timer = inputArray[i][1];
+                element = inputArray[i];
+                index = i;
+                break;
             }
         }
         let temp = new Block(element[0], timer, timer+element[2]);
@@ -52,6 +67,7 @@ var sjfNonPreemption = function(inputArray){
         count++;
         min = null;
         inputArray[index] = null;
+        processed = false;
         // console.log(timer);
         // console.log(element);
     }
