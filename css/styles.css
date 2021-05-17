@@ -330,7 +330,7 @@ th,td{
 .row-button
 {
     color: white;
-    background-color: #091440 !important;
+    background-color: #33475B !important;
     padding: 2px 5px;
     display: inline-block;
     text-decoration: none;
@@ -339,7 +339,7 @@ th,td{
 
 }
 .submit{
-    background-color: #091440;
+    background-color: #33475B;
     color: white;
     text-decoration: none;
     margin: 10px 0px;

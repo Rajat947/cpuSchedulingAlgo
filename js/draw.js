@@ -32,7 +32,7 @@ function addBlocks(blocks){
         if(index === 0)
         {
             let html = `<div class="algos" style="width: ${cur.width}%;">
-                            <div class="line title" style="background-color: blue;">${cur.name}</div>
+                            <div class="line title" style="background-color: #65BC7B;">${cur.name}</div>
                             <div class="line justify-content-between" style="text-align: left;background-color: white;border-right: 0px;">
                                 <div style="position: absolute; left: -4px; padding-left: 5px;">${cur.start}</div>
                                 <div class="times" style="position: absolute; right: -2px">${cur.end}</div>
@@ -41,7 +41,7 @@ function addBlocks(blocks){
             element.insertAdjacentHTML('beforeend',html);
         }else if(index === blocks.length-1){
             let html = ` <div class="algos" style="width: ${cur.width}%;">
-                            <div class="line title" style="background-color: blue;">${cur.name}</div>
+                            <div class="line title" style="background-color: #65BC7B;">${cur.name}</div>
                             <div class="line justify-content-between" style="text-align: left;background-color: white;border-right: 0px;">
                                 <div style="position: absolute; left: 1px; padding-left: 5px;">${cur.start}</div>
                                 <div class="times" style="position: absolute; right: -2px">${cur.end}</div>
@@ -50,7 +50,7 @@ function addBlocks(blocks){
             element.insertAdjacentHTML('beforeend',html);
         }else{
             let html = `<div class="algos" style="width: ${cur.width}%;">
-                            <div class="line title" style="background-color: blue;">${cur.name}</div>
+                            <div class="line title" style="background-color: #65BC7B;">${cur.name}</div>
                             <div class="line justify-content-between" style="text-align: left;background-color: white;border-right: 0px;">
                                 <div style="position: absolute; left: -1px; padding-left: 5px;">${cur.start}</div>
                                 <div class="times" style="position: absolute; right: -2px">${cur.end}</div>
