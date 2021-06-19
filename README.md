@@ -1,1 +1,1 @@
-# cpuSchedulingAlgo
+# Simulator for CPU Scheduling Algorithms
