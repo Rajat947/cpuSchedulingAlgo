@@ -6,7 +6,7 @@ CPU scheduling is a process that allows one process to use the CPU while the exe
 It is a basic simulator that taked input from user and simulate <b>CPU scheduling algorithms</b> using gantt chart<br>
 
 # Algorithms simulated
-1. <b>First Come First serve</b> : Process that arrive first, get CPU first
+1. <b>First Come First serve</b> : Process that arrive first get CPU first
 2. <b>Shortest Job First without Preemption</b>: Process with shortest CPU time get CPU first.
 3. <b>Shortest Job First with Preemption</b>: Process with shortest remaining CPU time get CPU first.
 4. <b>Round Robin</b>: All processes get CPU for some fixed time.
