@@ -28,9 +28,6 @@
     <div class="content" id="content">
         <!-- FCFS -->
         <div class="FCFS container-fluid mainContent" id="FCFS" style="display: none;">
-            <!-- <div class="row title">
-                <div class="title-name"> FIRST COME FIRST SERVE</div>
-            </div> -->
             <div class="row heading"><h2>FIRST COME FIRST SERVE</h2></div>
             <div class="row detail">
                 <div>FCFS (First-come-First-serve) follows the principle of FIFO (First-in-First-out). It is the simplest scheduling algorithm. FCFS simply queues processes in the order that they arrive in the ready queue. In this, the process which comes first will be executed first and the next process starts only after the previous gets fully executed. It is a non-preemptive algorithm. Let's look at this problem:</div>
@@ -53,9 +50,6 @@
         </div>
         <!-- SJF -->
         <div class="SJF container-fluid mainContent" id="SJF"  style="display: none;">
-            <!-- <div class="row title">
-                <div class="title-name">SHORTEST JOB FIRST (non-preemptive)</div>
-            </div> -->
             <div class="row heading"><h2>SHORTEST JOB FIRST (non-preemptive)</h2></div>
             <div class="row detail">
                 <div>
@@ -89,9 +83,6 @@
         </div>
         <!-- SRTF -->
 <div class="SRTF container-fluid mainContent" id="SRTF"  style="display: none;">
-    <!-- <div class="row title">
-        <div class="title-name">SHORTEST JOB FIRST (preemptive)</div>
-    </div> -->
     <div class="row heading"><h2>SHORTEST JOB FIRST (preemptive)</h2></div>
     <div class="row detail">
         <div>
@@ -127,9 +118,6 @@
 </div>
         <!-- RR -->
         <div class="RR container-fluid mainContent" id="RR"  style="display: none;">
-            <!-- <div class="row title">
-                <div class="title-name">ROUND ROBIN</div>
-            </div> -->
             <div class="row heading"><h2>ROUND ROBIN</h2></div>
             <div class="row detail">
                 Round-Robin is a CPU scheduling algorithm where each process is assigned a fixed time slot (also called quantum). Once that chunk of time is completed, the process is context-switched with the next in the queue. It is the most common and practically usable scheduling algorithm, as it doesn't require the system to estimate the burst-time of a process. Calculation of burst-time is practically not possible as no one can predict how long a process will take to execute. It although has a minor disadvantage of the overhead of context-switching (some time gets wasted in the process). Let's try to understand the working using the following problem, with given Time Quantum of 2 units: <br>
@@ -157,9 +145,6 @@
 
     <!-- Table -->
     <div class="table container-fluid" style="display: grid;">
-        <!-- <div class="title" style="width: fit-content;">
-            <div class="title-name" style="display: inline-block;">SIMULATE</div>
-        </div> -->
         <div class="row heading"><h2>SIMULATE</h2></div>
         <div class="content">
             <div class="table-content">
@@ -204,32 +189,7 @@
     </div>
     <!-- Content -->
     <div id="container-fluid" style="margin-bottom: 100px;line-height: 1;">
-        <div id="root" class="row justify-content-center">
-            <!-- first -->
-            <!-- <div class="algos" style="width: 10%;">
-                <div class="line title" style="background-color: blue;">name</div>
-                <div class="line justify-content-between" style="text-align: left;background-color: white;border-right: 0px;">
-                    <div style="position: absolute; left: -4px; padding-left: 5px;">0</div>
-                    <div class="times" style="position: absolute; right: -2px">54</div>
-                </div>
-            </div> -->
-            <!-- middle -->
-            <!-- <div class="algos" style="width: 10%;">
-                <div class="line title" style="background-color: blue;">name</div>
-                <div class="line justify-content-between" style="text-align: left;background-color: white;border-right: 0px;">
-                    <div style="position: absolute; left: -1px; padding-left: 5px;">0</div>
-                    <div class="times" style="position: absolute; right: -2px">54</div>
-                </div>
-            </div> -->
-            <!-- last -->
-            <!-- <div class="algos" style="width: 10%;">
-                <div class="line title" style="background-color: blue;">name</div>
-                <div class="line justify-content-between" style="text-align: left;background-color: white;border-right: 0px;">
-                    <div style="position: absolute; left: 1px; padding-left: 5px;">0</div>
-                    <div class="times" style="position: absolute; right: -2px">54</div>
-                </div>
-            </div> -->
-        </div>
+        <div id="root" class="row justify-content-center"></div>
     </div>
     <div class="container-fluid">
         <div class="row" id="averageTime">
@@ -237,7 +197,7 @@
     </div>
     <!--Footer  -->
     <div class="footer algo-footer">
-        Made with <i class="fas fa-heart"></i> by Rajat and Rahul Kakkar
+        Made with <i class="fas fa-heart"></i> by Rajat.
      </div>
     <script src="js/bootstrap.js"></script>
     <!-- <script src="js/FCFS.js"></script> -->

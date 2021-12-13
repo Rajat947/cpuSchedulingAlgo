@@ -10,52 +10,8 @@
 </head>
 <body>
     <!-- header -->
-    <!-- <div class="side-menu" id="side-menu">
-        <ul class = "list">
-            <li class="close-btn">
-                <a onclick="closenav()">&times;</a>
-            </li>
-            <li class="links">
-            </li>
-            <li class="links">
-                <a href="#CPUSCHEDULING" class="navigation-links">
-                    <p>WHAT IS CPU SCHEDULING</p>
-                </a>
-            </li>
-            <li class="links">
-                <a href="#NEED" class="navigation-links">
-                    <p>NEED FOR CPU SCHEDULING</p>
-                </a>
-            </li>
-            <li class="links">
-                <a href="#ALGORITHMS" class="navigation-links">
-                    <p>ALGORITHMS</p>
-                </a>
-            </li>
-            <li class="links">
-                <a href="#GOALS" class="navigation-links">
-                    <p>GOALS OF CPU SCHEDULING</p>
-                </a>
-            </li>
-            <li class="links">
-                <a href="about.html" class="navigation-links">
-                    <p>ABOUT US</p>
-                </a>
-            </li>
-            <li class="links">
-                <a href="#CONS" class="navigation-links">
-                    <p>CONTACT US</p>
-                </a>
-            </li>
-        </ul>
-    </div> -->
     <div class="header home">
         <div class="row">
-            <!-- <div class="visible collapasable-menu col-3 align-self-center" onclick="openNav()">
-                <div class="menu-line"></div>
-                <div class="menu-line"></div>
-                <div class="menu-line"></div>
-            </div> -->
             <div id="logo" class="container-fluid logo col-6 align-self-center">
                 <img src="Images/logo.png" alt="cpu Scheduling">
             </div>
@@ -71,39 +27,10 @@
             </h1>
         </div>
     </div>
-    <!-- <div id="navigation" class="container-fluid navgation-bar">
-        <ul class = "list nav justify-content-center ">
-            <li class="nav-item links">
-                <a id="1"  href="#CPUSCHEDULING" class="navigation-links navigation-links" onclick="addPadding()" onscroll="removePad()">
-                    <p>WHAT IS CPU SCHEDULING</p>
-                </a>
-                <div class="bar"></div>
-            </li>
-            <li class="links">
-                <a id="2" href="#NEED" class="navigation-links" onclick="addPadding()" onscroll="removePad()">
-                    <p>NEED FOR CPU SCHEDULING</p>
-                </a>
-                <div class="bar"></div>
-            </li>
-            <li class="links">
-                <a id="3" href="#ALGORITHMS" class="navigation-links" onclick="addPadding()" onscroll="removePad()">
-                    <p>ALGORITHMS</p>
-                </a>
-                <div class="bar"></div>
-            </li>
-            <li class="links">
-                <a id="4" href="#GOALS" class="navigation-links" onclick="addPadding()" onscroll="removePad()">
-                    <p>GOALS OF CPU SCHEDULING</p>
-                </a>
-            </li>
-        </ul>
-    </div> -->
+
     <!-- Content -->
     <div class="content" id="content">
         <div class = "WhatIsCpuScheduling container-fluid mainContent" id="CPUSCHEDULING">
-            <!-- <div class="row title">
-                <div class="title-name"> What is Cpu Scheduling</div>
-            </div> -->
             <div class="row heading"><h2>What is CPU Scheduling</h2></div>
             <div class="row detail">
                 CPU scheduling is a process that allows one process to use the CPU while the execution of another process is on hold(in waiting state) due to unavailability of any resource like I/O etc, thereby making full use of CPU. The aim of CPU scheduling is to make the system efficient, fast, and fair.
@@ -144,9 +71,6 @@
             </div>
         </div>
         <div class = "NeddOfCpuScheduling container-fluid mainContent" id="NEED">
-            <!-- <div class="row title">
-                <div class="title-name">Need of Cpu Scheduling</div>
-            </div> -->
             <div class="row heading"><h2>Need of Cpu Scheduling</h2></div>
             <div class="row detail">
                 A typical process involves both I/O time and CPU time. In a uni programming system like MS-DOS, time spent waiting for I/O is wasted and CPU is free during this time. In multi programming systems, one process can use CPU while another is waiting for I/O. This is possible only with process scheduling.
@@ -155,9 +79,6 @@
             </div>
         </div>
         <div class = "Algorithms container-fluid mainContent" id="ALGORITHMS">
-            <!-- <div class="row title">
-                <div class="title-name">Algorithms</div>
-            </div> -->
             <div class="row heading"><h2>Algorithms</h2></div>
             <div class="row detail">
                 CPU scheduling deals with the problem of deciding which of the processes in
@@ -209,7 +130,6 @@
                             </ol>
                         </div>
                         <div class="simulation-btn">
-                            <!-- href="algo.html"  -->
                             <a class="SJF simulate-btn" onclick="navigate()">Read More</a>
                         </div>
                     </div>
@@ -263,7 +183,6 @@
                             </ol>
                         </div>
                         <div class="simulation-btn">
-                            <!-- href="algo.html"  -->
                             <a class="RR simulate-btn" onclick="navigate()">Read More</a>
                         </div>
                     </div>
@@ -271,9 +190,6 @@
             </div>
         </div>
         <div class = "pros container-fluid mainContent" id="GOALS">
-            <!-- <div class="row title">
-                <div class="title-name">Goals of CPU Scheduling</div>
-            </div> -->
             <div class="row heading"><h2>Goals of CPU Scheduling</h2></div>
             <div class="row detail">
                 Different goals for which we use CPU scheduling are as follows : <br>
@@ -308,7 +224,7 @@
     </div>
      <!--Footer  -->
      <div class="footer">
-        Made with <i class="fas fa-heart"></i> by Rajat and Rahul Kakkar
+        Made with <i class="fas fa-heart"></i> by Rajat.
      </div>
     <script src="js/bootstrap.js"></script>
     <script src="js/draw.js"></script>
