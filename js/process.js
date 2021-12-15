@@ -1,3 +1,4 @@
+//Structure of process
 class Process{
     constructor(start,burst){
         this.start = start;

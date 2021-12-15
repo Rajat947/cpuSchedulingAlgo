@@ -1,6 +1,4 @@
 var rr = function(inputArray, quantum){
-    // var inputArray = [["p1",0,10], ["p2",2,20], ["p3",6,30]];
-    // var quantum = 2;
     quantum = parseInt(quantum);
     var blocks = [];
     var process = {};

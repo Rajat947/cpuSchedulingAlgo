@@ -37,7 +37,7 @@ function sjf(inputArray)
             i++;
         }else if(inputArray[i][2] < element.burst-inputArray[i][1]+element.arrival){
             let tempBlock = new Block(element.name, timer, timer+inputArray[i][1]-element.arrival);
-            //console.log(tempBlock);
+            
             blocks.push(tempBlock);
             timer=inputArray[i][1];
             element.burst-=(inputArray[i][1]-element.arrival);
@@ -96,4 +96,3 @@ function sjf(inputArray)
     
     return [process,blocks];
 }
-var inputArray = [["p1",0,8], ["p2",1,4], ["p3",2,2], ["p4",3,1], ["p5",4,3], ["p6",5,2]];

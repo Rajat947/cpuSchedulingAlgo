@@ -1,4 +1,3 @@
-// var inputArray = [["p0",0,27], ["p3",2,4], ["p1",1,25]];
 var fcfs = function(inputArray){
     var process = {};
     var blocks = [];

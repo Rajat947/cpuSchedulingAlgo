@@ -1,3 +1,4 @@
+//Block structure for gantt chart
 class Block{
     constructor(name,start,end){
         this.name = name;

@@ -25,14 +25,12 @@ class minHeap
         }
     }
     parent(i){
-        // console.log(((i-1)/2))
         return(Math.ceil((i-1)/2));
     }
     insert(name,arrival,burst){
         let element = new heapValue(name,arrival,burst);
         this.arr.push(element);
         let index = this.arr.length -1;
-        // console.log("here we go :"+this.arr[this.parent(index)]);
         while(index > 0 && this.arr[index].burst < this.arr[this.parent(index)].burst)
         {
             let temp = this.arr[index];

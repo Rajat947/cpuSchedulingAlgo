@@ -1,4 +1,3 @@
-// var inputArray = [["p1",1,7], ["p2",3,3], ["p3",6,2], ["p4",7,10], ["p5",9,8]];
 function comparator(a,b){
     if(a[1] === b[1])
     {
@@ -8,7 +7,6 @@ function comparator(a,b){
     }
 }
 var sjfNonPreemption = function(inputArray){
-    // console.log(inputArray);
     inputArray.sort(comparator);
     var blocks = [];
     var process = {};
@@ -22,7 +20,6 @@ var sjfNonPreemption = function(inputArray){
     var min = null;
     count++;
     index++;
-    // console.log(timer);
 
     inputArray.map(cur => {
         process[cur[0]] = new Process(cur[1], cur[2]);
@@ -68,8 +65,6 @@ var sjfNonPreemption = function(inputArray){
         min = null;
         inputArray[index] = null;
         processed = false;
-        // console.log(timer);
-        // console.log(element);
     }
     blocks.map(cur => {
         process[cur.name].completion = cur.end;

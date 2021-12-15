@@ -11,7 +11,10 @@ It is a basic simulator that taked input from user and simulate <b>CPU schedulin
 3. <b>Shortest Job First with Preemption</b>: Process with shortest remaining CPU time get CPU first.
 4. <b>Round Robin</b>: All processes get CPU for some fixed time.
 
-# Languages used
-1. HTML
-2. CSS
-3. JAVASCRIPT
+# Implementation Details
+- Data structures implemented in javaScript
+	- Min Heap/Priority Queue
+	- Queue
+- About.html contains developers page
+- Algo.html contains template for each algorithm
+- js/draw.js draws gantt chart for each algorithm

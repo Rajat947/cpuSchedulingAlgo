@@ -59,7 +59,6 @@ function addBlocks(blocks){
             element.insertAdjacentHTML('beforeend',html);
         }
     });
-    // console.log(blocks);
     element.parentNode.style.maxWidth = "100%";
 }
 
